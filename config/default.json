@@ -1,0 +1,4 @@
+{
+    "mongoURL": "mongodb+srv://Dev:clMot6AF1rTtxzb3@cluster0.isb6p.mongodb.net/Homehunts?retryWrites=true&w=majority",
+    "jwtSecret": "myjwtSecret"
+}
