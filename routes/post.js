@@ -32,20 +32,16 @@ router.get("/:id", auth, async (req, res) => {
     try {
         const Home = await Items.findById(req.params.id);
         if (Home.id === req.params.id) {
-            await Home.findOne()
-            res.status(200).json("The home has been deleted");
+            await Items.findOne()
+            res.status(200).json(Home);
         }
     } catch (err) {
         res.status(400).json("Home does not exist");
     }
-    // const Home = await Items.findById(req.params.id);
-    // res.status(200).json(Home);
-    // if (id !== req.params.id)
-    //     return res.status(400).json("Id does not exist")
 });
 
 // DELETE A HOME
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
     try {
         const Home = await Items.findById(req.params.id);
         if (Home.id === req.params.id) {
